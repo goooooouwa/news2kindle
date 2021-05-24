@@ -12,5 +12,5 @@ class handler(BaseHTTPRequestHandler):
         message = f"Sending news ... status: {send_news.returncode}"
         self.wfile.write(bytes(message, "utf8"))
 
-with HTTPServer(('', sys.argv[1]), handler) as server:
+with HTTPServer(('', int(sys.argv[1])), handler) as server:
     server.serve_forever()
