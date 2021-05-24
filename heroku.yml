@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: python3 ./src/http_server.py $PORT
+  web: python3 src/http_server.py $PORT

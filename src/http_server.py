@@ -8,8 +8,8 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/html')
         self.end_headers()
 
-        send_news = subprocess.run(["python3", "src/news2kindle.py"])
-        message = f"Sending news ... status: {send_news.returncode}"
+        subprocess.Popen(["python3", "src/news2kindle.py"])
+        message = "Sending news ..."
         self.wfile.write(bytes(message, "utf8"))
 
 with HTTPServer(('', int(sys.argv[1])), handler) as server:
